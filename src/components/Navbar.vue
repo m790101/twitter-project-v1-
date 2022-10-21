@@ -29,6 +29,24 @@
           <span>首頁</span>
         </router-link>
       </div>
+            <div class="menu__function">
+        <router-link
+          to="/public-chat"
+          class="text-center d-flex link align-items-center"
+        >
+          <img
+            src="./../assets/icon/chat.png"
+            alt=""
+            class="menu__function__icon"
+          />
+          <img
+            src="./../assets/icon/chat-active.png"
+            alt=""
+            class="menu__function__icon__active"
+          />
+          <span>公開聊天室</span>
+        </router-link>
+      </div>
       <div class="menu__function">
         <router-link
           :to="{name:'user-information', params:{id:currentUser.id}}"
@@ -194,6 +212,7 @@ export default {
       this.$emit('navCreateTweet',playLoad)
     },
     logout(){
+      this.$emit('socketLogout')
       this.$store.commit('revokeAuthentication')
       this.$router.push('/logIn')
     }
