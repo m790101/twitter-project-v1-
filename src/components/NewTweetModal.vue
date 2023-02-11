@@ -121,10 +121,11 @@ export default {
           });
         }
         this.isProcessing = true;
+        // eslint-disable-next-line no-unused-vars
         const response = await tweetApi.create({
           description: this.description,
         });
-        if (response.statusText !== "OK") throw new Error();
+        // if (response.statusText !== "OK") throw new Error();
         this.$emit("afterCreatedTweet", {
           description: this.description,
           createdAt: new Date(),

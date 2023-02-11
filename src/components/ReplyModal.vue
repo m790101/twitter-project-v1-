@@ -213,9 +213,9 @@ export default {
       try{
         this.isProcessing = true
               const response = await tweetApi.createReply({comment:this.comment,tweet_id:id})
-              if(response.statusText !== 'OK')throw new Error
+              // if(response.statusText !== 'OK')throw new Error
               this.$emit("closeReplyModal");
-              console.log(response)
+              
               this.$emit("afterCreateReply",{
                 id:response.data.id,
                 comment:this.comment,
